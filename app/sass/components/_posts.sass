@@ -1,0 +1,101 @@
+.posts
+	max-width: 1150px
+	background: #f9f9fb
+
+.post-list
+	display: grid
+	grid-template-columns: 1fr
+	grid-gap: rem(40px)
+
+.post-item
+	border: 1px solid #f5f5f7
+	background: #fff
+
+.post-item-gallery
+	position: relative
+	width: 100%
+	height: 480px
+	border-bottom: 1px solid #f5f5f7
+	background: #f7f7f7
+.post-item-gallery .icon-pinterest
+	position: absolute
+	top: 0
+	right: 0
+	width: rem(50px)
+	height: rem(50px)
+	background: #cc2127
+	color: #fff
+	font-size: 30px
+	line-height: 50px
+	text-align: center
+.post-item-gallery .icon-photo
+	position: absolute
+	bottom: 0
+	left: 50%
+	transform: translate(-50%, 50%)
+	font-size: rem(20px)
+	width: rem(40px)
+	height: rem(40px)
+	background: $accent_color
+	line-height: 40px
+	text-align: center
+	color: #fff
+
+.post-item-info
+	width: 100%
+	display: flex
+	flex-direction: column
+	align-items: center
+	text-align: center
+	margin-top: rem(65px)
+	padding: 0 rem(65px)
+	padding-bottom: rem(40px)
+
+.post-item-info .posts-secondary-text,
+.post-item-info .posts-title,
+.post-item-info .author-date
+	margin-bottom: rem(26px)
+.post-item-info .posts-text
+	margin-bottom: rem(40px)
+.post-item-info	.read-more-btn
+	margin-bottom: rem(73px)
+
+.comment-like .posts-secondary-text,
+.author-date .posts-secondary-text
+	margin-right: rem(34px)
+	padding-left: rem(32px)
+	position: relative
+.author-date .posts-secondary-text:last-child
+	margin-right: 0
+.comment-like .posts-secondary-text:before,
+.author-date .posts-secondary-text:before
+	font-family: 'icomoon'
+	font-size: rem(20px)
+	position: absolute
+	top: 0
+	left: 0
+	color: $second_color
+	line-height: 12px
+
+.comment-like .posts-secondary-text:first-child:before
+	content: "\f0e6"
+.comment-like .posts-secondary-text:last-child:before
+	content: "\f08a"
+
+.author-date .posts-secondary-text:first-child:before
+	content: "\f007"
+.author-date .posts-secondary-text:last-child:before
+	content: "\f073"
+
+.post-item-footer
+	width: 100%
+	display: flex
+	justify-content: space-between
+
+.networks
+	display: flex
+	justify-content: center
+.networks li
+	margin-left: rem(34px)
+	font-size: rem(20px)
+	color: $second_color

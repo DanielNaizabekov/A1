@@ -1,9 +1,12 @@
 @import "../../node_modules/normalize.css/normalize"
+@import "../../node_modules/slick-carousel/slick/slick.css"
 @import "mixin"
 @import "vars"
 @import "fonts"
+@import "media"
 
-@import "header"
+@import "./components/header"
+@import "./components/posts"
 
 // default settings
 html, body
@@ -12,6 +15,7 @@ html, body
 	width: 100%
 	height: 100%
 	color: $accent_color
+	font-family: $default_font
 	font-size: 16px
 
 ul, li
@@ -34,3 +38,49 @@ h1,h2,h3,h4,h5,p
 .container
 	max-width: 1500px
 	margin: 0 auto
+
+section
+	background: #f9f9fb
+	padding: rem(50px) 0
+
+
+// ===general style===
+.form__btn
+	+font($default_font, rem(14px), #fff, 500)
+	letter-spacing: 2px
+	text-transform: uppercase
+	padding: rem(17px) rem(67px)
+	background: $accent_color
+	border: none
+	outline: none
+	cursor: pointer
+
+.form__btn:hover
+	opacity: 0.9
+
+.posts-secondary-text
+	+font($default_font, rem(16px), $thirth_color, 400)
+	letter-spacing: 1px
+	text-transform: uppercase
+
+.posts-title
+	+font('montserrat', rem(28px), $accent_color, 700)
+	letter-spacing: 2px
+	text-transform: uppercase
+
+.posts-text
+	+font($default_font, rem(16px), $second_color, 300, 25px)
+	letter-spacing: 0.5px
+
+.read-more-btn
+	+font($default_font, rem(14px), $accent_color, 700)
+	letter-spacing: 2px
+	text-transform: uppercase
+	text-decoration: none
+	padding: rem(10px) rem(15px)
+	border-left: 1px solid #d7d7d7
+	border-right: 1px solid #d7d7d7
+.read-more-btn:hover
+	background: #f7f7f7
+	text-decoration: underline
+// ===general style===
