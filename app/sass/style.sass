@@ -7,8 +7,9 @@
 
 @import "./components/header"
 @import "./components/posts"
+@import "./components/aside"
 
-// default settings
+// ===default settings===
 html, body
 	margin: 0
 	padding: 0
@@ -42,6 +43,7 @@ h1,h2,h3,h4,h5,p
 section
 	background: #f9f9fb
 	padding: rem(50px) 0
+// ===default settings===
 
 
 // ===general style===
@@ -63,10 +65,16 @@ section
 	letter-spacing: 1px
 	text-transform: uppercase
 
-.posts-title
-	+font('montserrat', rem(28px), $accent_color, 700)
+.posts-secondary-title
+	+font($default_font, rem(20px), #fff, 400, 31px)
 	letter-spacing: 2px
 	text-transform: uppercase
+
+.posts-title
+	+font('montserrat', rem(28px), $accent_color, 700, 36px)
+	letter-spacing: 2px
+	text-transform: uppercase
+	max-width: rem(955px)
 
 .posts-text
 	+font($default_font, rem(16px), $second_color, 300, 25px)
@@ -83,4 +91,14 @@ section
 .read-more-btn:hover
 	background: #f7f7f7
 	text-decoration: underline
+
+.container_flex
+	display: flex
+	justify-content: space-between
+	align-items: flex-start
+
+.aside-title
+	+font('montserrat', rem(20px), $accent_color, 700)
+	letter-spacing: 1px
+	text-transform: uppercase
 // ===general style===

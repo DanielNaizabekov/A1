@@ -1,4 +1,5 @@
 $(function() {
+	//===slider===
 	$('.slider').slick({
 		infinite: true,
 		slidesToShow: 1,
@@ -11,4 +12,24 @@ $(function() {
 	$('.slick-next').html('&darr;');
 	$('.slick-prev').html('&uarr;');
 	$('.slick-dots li').html('');
+	//===slider===
+
+
+
+	//===categories===
+	$('.categories-title').on('click', function() {
+		$('.categories-list').slideToggle(200);
+	})
+	//===categories===
+
+
+
+	// ===aside slider===
+	$('.aside-slider').slick({
+		infinite: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false
+	});
+	// ===aside slider===
 });

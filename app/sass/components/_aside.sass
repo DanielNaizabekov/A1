@@ -1,0 +1,133 @@
+.aside
+	max-width: 365px
+	margin-left: rem(40px)
+	padding: rem(40px) rem(30px)
+	border: 1px solid #f5f5f7
+	background: #fff
+
+.aside-list
+	display: flex
+	flex-direction: column
+
+.aside-item
+	flex: 1 1 auto
+	margin-bottom: rem(40px)
+.aside-item:last-child
+	margin-bottom: 0
+
+
+// ===aside search-form===
+.search-form
+	display: flex
+
+.search-input
+	+font($default_font, rem(15px), $accent_color, 300)
+	text-transform: uppercase
+	border: 1px solid #f5f5f7
+	padding: .875rem 1.875rem
+	background: #f9f9fb
+
+.aside .search-btn
+	padding: rem(17px)
+// ===aside search-form===
+
+
+// ===aside large advertising===
+.aside-advertising__img
+	max-width: 100%
+// ===aside large advertising===
+
+
+
+// ===categories===
+.categories-title
+	text-align: center
+	display: block
+
+.categories-list
+	margin-top: rem(25px)
+	display: none
+
+.categories-item
+	display: flex
+	justify-content: space-between
+	padding: rem(17px)
+	border-top: 2px solid #f7f7f7
+
+.categories-item a,
+.categories-item span
+	+font($default_font, rem(16px), $accent_color, 500)
+	letter-spacing: 1px
+	text-transform: uppercase
+	text-decoration: none
+.categories-item a:hover
+	text-decoration: underline
+// ===categories===
+
+
+
+// ===aside posts===
+.aside-posts-title
+	text-align: center
+	display: block
+
+.aside-posts-list
+	margin-top: rem(25px)
+
+.aside-posts-item
+	display: flex
+	justify-content: space-between
+	padding: rem(17px) 0
+	border-top: 2px solid #f7f7f7
+
+.aside-posts-item img
+	width: rem(80px)
+	height: rem(60px)
+	background: #3a3c49
+	margin-right: rem(10px)
+
+.aside-posts-item-title-wrap
+	max-width: rem(204px)
+
+.aside-posts-item-title
+	+font('montserrat', rem(15px), $accent_color, 700, 20px)
+	text-transform: uppercase
+	text-decoration: none
+	letter-spacing: 1px
+	margin-bottom: rem(5px)
+	transform: translateY(-3px)
+	display: block
+
+.aside-posts-item-title:hover
+	text-decoration: underline
+
+.aside-posts-item-text
+	+font($default_font, rem(14px), $thirth_color, 300)
+	letter-spacing: 1px
+	text-transform: uppercase
+
+.aside-posts-item-text:last-child
+	margin-left: rem(25px)
+// ===aside posts===
+
+
+
+// ===aside networks===
+.aside-networks-list
+	display: flex
+	justify-content: space-between
+
+.aside-networks-item a
+	text-decoration: none
+	color: $second_color
+	font-size: rem(20px)
+.aside-networks-item a:hover
+	color: #999
+// ===aside networks===
+
+
+
+// ===aside slider===
+.aside-slider-item img
+	max-width: 100%
+// ===aside slider===
