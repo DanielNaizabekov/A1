@@ -29,7 +29,10 @@ $(function() {
 		infinite: true,
 		slidesToShow: 1,
 		slidesToScroll: 1,
-		arrows: false
+		arrows: true
 	});
+
+	$('.aside-slider .slick-next').html('&rarr;');
+	$('.aside-slider .slick-prev').html('&larr;');
 	// ===aside slider===
 });

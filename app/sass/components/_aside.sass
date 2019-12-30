@@ -128,6 +128,45 @@
 
 
 // ===aside slider===
-.aside-slider-item img
-	max-width: 100%
+.aside-item
+	position: relative
+
+.aside-slider-item
+	background: #3a3c49
+
+.aside-item .img-wrap
+	position: relative
+	padding-bottom: 66%
+	padding-top: 30px
+	height: 0
+	overflow: hidden
+.aside-item .img-wrap img
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	object-fit: cover
+
+.aside-item .slick-prev,
+.aside-item .slick-next
+	position: absolute
+	z-index: 10
+	top: 50%
+	transform: translateY(-50%)
+	width: rem(36px)
+	height: rem(36px)
+	background: $second_color
+	border: none
+	outline: none
+	font-size: rem(24px)
+	color: #fff
+	cursor: pointer
+.aside-item .slick-prev:hover,
+.aside-item .slick-next:hover
+	opacity: .7
+.aside-item .slick-prev
+	left: 0
+.aside-item .slick-next
+	right: 0
 // ===aside slider===
