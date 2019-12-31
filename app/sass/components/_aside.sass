@@ -43,10 +43,32 @@
 .categories-title
 	text-align: center
 	display: block
+	cursor: pointer
+.categories-title:hover
+	color: #999
+.menu-categories,
+.categories-title
+	position: relative
+.menu-categories:after,
+.categories-title:after
+	content: '+'
+	position: absolute
+	font-family: arial
+	font-weight: 400
+	font-size: rem(30px)
+	transform: rotate(45deg)
+
+.categories-title:after
+	top: -6px
+	right: 40px
+
+.categories-title-active .categories-title-active::after
+	transform: rotate(0deg)
+
 
 .categories-list
 	margin-top: rem(25px)
-	display: none
+	display: block
 
 .categories-item
 	display: flex

@@ -5,18 +5,79 @@
 
 .nav
 	display: flex
-	justify-content: space-between
+	justify-content: flex-end
 	align-items: center
 	position: relative
 
+
+
+//===menu===
+.menu
+	position: fixed
+	z-index: 20
+	top: 0
+	left: 0
+	width: 320px
+	// min-width: 320px
+	background: $accent_color
+	padding: rem(20px)
+	transition: .3s
+	transform: translateX(-100%)
+.menu-active
+	transform: translateX(0)
+
+.menu-list
+	width: 100%
+	// min-height: 80vh
+	display: flex
+	flex-direction: column
+	// justify-content: space-between
+.menu-list .menu-item
+	margin-bottom: rem(20px)
+.menu-list .menu-item:last-child
+	margin-bottom: 0
+
+.menu-list .categories-list
+	margin: 0
+.menu-list .categories-item
+	padding: rem(10px)
+	border: none
+.menu-list .categories-item a
+	color: #999
+	font-size: rem(14px)
+
+.menu-list .list
+	display: flex
+	justify-content: space-between
+.menu-list .list__item
+	padding: 0
+.menu-list .list__item,
+.menu-list .list__item:last-child
+	border: none
+
+.menu-link
+	+font('montserrat', rem(17px), $accent_color, 700)
+	letter-spacing: 1px
+	text-transform: uppercase
+	text-decoration: none
+	color: #fff
+.menu-link:hover
+	text-decoration: underline
+//===menu===
 //===menu-btn===
 .menu__btn
 	width: rem(62px)
-	height: rem(55px)
+	height: rem(57px)
 	border-left: 2px solid #3c3c3c
 	border-right: 2px solid #3c3c3c
-	position: relative
+	background: #212429
+	position: absolute
 	cursor: pointer
+	top: 0
+	right: -98px
+	transition: 0.3s
+.menu-active .menu__btn
+	right: 0
 
 .menu__btn:hover
 	opacity: 0.5

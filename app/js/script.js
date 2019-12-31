@@ -1,4 +1,12 @@
 $(function() {
+	//===menu===
+	$('.menu__btn').on('click', function() {
+		$('.menu').toggleClass('menu-active');
+	});
+	//===menu===
+
+
+
 	//===slider===
 	$('.slider').slick({
 		infinite: true,
@@ -17,8 +25,10 @@ $(function() {
 
 
 	//===categories===
-	$('.categories-title').on('click', function() {
-		$('.categories-list').slideToggle(200);
+	$('.categories-title, .menu-categories').on('click', function(event) {
+		event.preventDefault();
+		$(this).toggleClass('.categories-title-active');
+		$(this).parent().find('.categories-list').slideToggle(200);
 	})
 	//===categories===
 
