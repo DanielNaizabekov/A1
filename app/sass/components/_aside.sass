@@ -19,6 +19,7 @@
 // ===aside search-form===
 .search-form
 	display: flex
+	justify-content: space-between
 
 .search-input
 	+font($default_font, rem(15px), $accent_color, 300)
@@ -26,6 +27,7 @@
 	border: 1px solid #f5f5f7
 	padding: .875rem 1.875rem
 	background: #f9f9fb
+	flex: 1
 
 .aside .search-btn
 	padding: rem(17px)
@@ -34,7 +36,7 @@
 
 // ===aside large advertising===
 .aside-advertising__img
-	max-width: 100%
+	width: 100%
 // ===aside large advertising===
 
 
@@ -57,14 +59,17 @@
 	font-weight: 400
 	font-size: rem(30px)
 	transform: rotate(45deg)
+	transition: .3s transform
 
+.menu-categories:after
+	top: -8px
+	right: -30px
 .categories-title:after
 	top: -6px
 	right: 40px
 
-.categories-title-active .categories-title-active::after
-	transform: rotate(0deg)
-
+.categories-title-active:after
+	transform: rotate(360deg)
 
 .categories-list
 	margin-top: rem(25px)

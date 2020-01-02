@@ -1,0 +1,69 @@
+//===post block===
+.detail-content .posts-text
+	text-align: left
+
+.tags
+	margin-bottom: rem(60px) !important
+	padding-left: rem(32px)
+	position: relative
+.tags:before
+	content: '\e900'
+	font-family: 'icomoon'
+	position: absolute
+	top: 0
+	left: 0
+	color: $accent_color
+
+.rating
+	margin: 0 !important
+//===post block===
+
+
+
+//===detail-post-buttons===
+.detail-post-buttons a
+	+font($default_font, rem(14px), #fff, 500)
+	text-transform: uppercase
+	letter-spacing: 2px
+	text-decoration: none
+
+.detail-post-buttons a:hover
+	text-decoration: underline
+
+.detail-post-buttons
+	width: 100%
+	display: flex
+
+.detail-post-buttons .detail-post-btn
+	flex: 1
+	padding: rem(45px) 0
+	text-align: center
+
+.detail-post-buttons .detail-post-btn:first-child
+	background: #000
+	margin-right: rem(30px)
+.detail-post-buttons .detail-post-btn:last-child
+	background: #3a3c49
+
+.detail-post-buttons a
+	position: relative
+
+.detail-post-buttons a:first-child:after,
+.detail-post-buttons a:last-child:after
+	position: absolute
+	top: 0
+	font-size: rem(20px)
+	line-height: 10px
+
+.detail-post-btn:first-child a
+	padding-left: 32px
+.detail-post-btn:last-child a
+	padding-right: 32px
+
+.detail-post-btn:first-child a:after
+	content: '\2190'
+	left: 0
+.detail-post-btn:last-child a:after
+	content: '\2192'
+	right: 0
+//===detail-post-buttons===

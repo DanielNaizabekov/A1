@@ -1,0 +1,115 @@
+.footer
+	padding-top: rem(50px)
+	background: #212429
+
+.footer-title
+	+font('montserrat', rem(16px), #f7f7f7, 700)
+	text-transform: uppercase
+	text-decoration: none
+	letter-spacing: 1px
+	margin-bottom: rem(20px)
+.footer-title:hover
+	text-decoration: underline
+
+.footer-text
+	+font($default_font, rem(14px), #f9f9fb, 300)
+	letter-spacing: 1px
+	line-height: 24px
+
+.footer-text-small
+	font-size: rem(12px)
+	margin-bottom: rem(10px)
+	line-height: 12px
+
+.footer-text-dark
+	color: #747577
+	text-transform: uppercase
+
+
+.footer-list
+	display: grid
+	grid-template-columns: repeat(4, 1fr)
+	grid-gap: rem(30px)
+
+.footer-item
+	display: flex
+	flex-direction: column
+
+.about-blog-img
+	position: relative
+	padding-bottom: 50%
+	padding-top: 30px
+	height: 0
+	overflow: hidden
+
+	width: 100%
+	height: 130px
+	background: #3a3c49
+	margin-top: 5px
+	
+.about-blog-img img
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	object-fit: cover
+	width: 100%
+
+
+.tweet-wrap
+	margin-bottom: rem(25px)
+	padding-left: 20px
+.tweet-wrap:last-child
+	margin-bottom: 0
+
+.tweet-wrap .footer-text-small
+	position: relative
+.tweet-wrap .footer-text-small:after
+	content: '\f099'
+	font-family: 'icomoon'
+	position: absolute
+	top: 0
+	left: -20px
+
+.instagram-imgs-wrap
+	display: grid
+	grid-template-columns: 1fr 1fr 1fr
+	grid-auto-rows: minmax(50px, auto)
+	grid-gap: 3px
+
+.instagram-img
+	background: #fff
+	position: relative
+	padding-bottom: 50%
+	padding-top: 30px
+	height: 0
+	overflow: hidden
+.instagram-img img
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	object-fit: cover
+	width: 100%
+
+.comment-wrap:last-child
+	padding-top: rem(15px)
+	margin-top: rem(15px)
+	border-top: 1px solid #65676a
+
+
+.footer-desc
+	margin-top: rem(50px)
+	background: #17191c
+	text-align: center
+	padding: rem(12px) 0
+
+.footer-desc a
+	text-decoration: none
+	padding-left: rem(20px)
+	margin-left: rem(20px)
+	border-left: 1px solid #65676a
+.footer-desc a:hover
+	text-decoration: underline

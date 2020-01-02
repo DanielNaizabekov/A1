@@ -2,3 +2,190 @@
 	.container
 		padding-left: 35px
 		padding-right: 35px
+
++media(1300px)
+	.post-item-footer
+		position: relative
+
+	.rating
+		position: absolute
+		top: calc(100% + 25px)
+		left: 0
+
+	.post-item-info
+		padding-bottom: rem(75px)
+
++media(1135px)
+	//===header subscribe===
+	.subscribe
+		flex-direction: column
+		justify-content: space-around
+		align-items: stretch
+
+	.subscribe-desc
+		max-width: none
+		text-align: center
+		margin-bottom: rem(20px)
+		margin-right: 0
+	//===header subscribe===
+
+
+	//===aside===
+	.aside
+		max-width: 300px
+
+	.search-btn
+		transform: translateX(calc(-100% + 5px))
+	.search-input
+		padding-left: 8px
+		padding-right: 50px
+
+	.aside-title:after
+		right: 10px
+	//===aside===
+
++media(1045px)
+	html
+		font-size: 14px
+
+	.menu__btn
+		right: -89px
+
+	.menu-item .list__link
+		line-height: 5px
+	.header-search-input
+		height: calc(100% + 4px)
+	.header-search-btn
+		padding: rem(10px) rem(11px)
+	#nav-search-wrap .header-search-input
+		height: 42px
+
+	.slider__desc
+		right: 9px
+
+	.post-item-info
+		padding-left: 10px
+		padding-right: 10px
+
+	.post-item-info .icon
+		line-height: 35px
+	.post-item-gallery .icon-pinterest
+		line-height: 43px
+
+	.search-btn
+		transform: translateX(0)
+
+	.aside-title:after
+		right: 25px
+
++media(865px)
+	.aside
+		display: none
+
+	.slider-item
+		padding: rem(150px) rem(70px)
+
+	.slider .slick-next
+		top: 71%
+	.slider .slick-prev
+		top: 29%
+
+
++media(810px)
+	//===subscribe===
+	.subscribe__form
+		flex-direction: column
+		align-items: stretch
+
+	.subscribe__input
+		margin: 0 0 rem(10px) 0
+
+	.subscribe__btn
+		max-width: 235px
+	//===subscribe===
+
+
+	//===footer===
+	.footer-list
+		display: grid
+		grid-template-columns: repeat(2, 1fr)
+		grid-gap: rem(30px)
+	//===footer===
+
+
++media(710px)
+	.nav
+		min-height: 50px
+
+	.list
+		display: none
+
+	.header-logo
+		left: 100%
+		transform: translate(-100%, -50%)
+
+	.slider-item
+		padding: rem(100px) rem(70px)
+	.slider__title
+		font-size: rem(20px)
+		letter-spacing: 3px
+		line-height: 25px
+	.slider .slick-next
+		top: 80%
+	.slider .slick-prev
+		top: 20%
+
+	.footer-desc span
+		display: block
+		
+
++media(600px)
+	.container
+		padding-left: 15px
+		padding-right: 15px
+
+	.menu__btn
+		right: -70px
+
+	.slider__desc
+		display: none
+
+	.slider .slick-next
+		right: 10px
+		top: 20px
+	.slider .slick-prev
+		right: 10px
+		top: calc(100% - 20px)
+
+	.posts-title
+		font-size: rem(20px)
+		line-height: 28px
+	.posts-secondary-title
+		font-size: rem(13px)
+		line-height: 20px
+
+
++media(500px)
+	.posts-secondary-text
+		font-size: 10px
+
+	.post-item-footer
+		align-items: center
+	
+	.comment-like
+		display: flex
+		flex-direction: column
+		justify-content: flex-start
+	.comment-like .posts-secondary-text
+		margin-right: 0
+		text-align: left
+	.comment-like .posts-secondary-text:last-child
+		margin: 0
+
+
++media(375px)
+	.slider-item
+		padding: rem(70px) rem(20px)
+
+	.footer-list
+		grid-template-columns: 1fr

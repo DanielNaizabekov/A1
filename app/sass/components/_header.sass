@@ -49,11 +49,17 @@
 .menu-list .list
 	display: flex
 	justify-content: space-between
+
 .menu-list .list__item
-	padding: 0
-.menu-list .list__item,
+	width: rem(30px)
+	height: rem(30px)
+	border: 1px solid #999
+	border-radius: 50%
+	display: flex
+	justify-content: center
+	align-items: center
 .menu-list .list__item:last-child
-	border: none
+	border: 1px solid #999
 
 .menu-link
 	+font('montserrat', rem(17px), $accent_color, 700)
@@ -74,7 +80,7 @@
 	position: absolute
 	cursor: pointer
 	top: 0
-	right: -98px
+	right: -97px
 	transition: 0.3s
 .menu-active .menu__btn
 	right: 0
@@ -91,6 +97,7 @@
 	width: 20px
 	height: 2px
 	background: #fff
+	transition: .3s
 
 .menu__btn span:before,
 .menu__btn span:after
@@ -101,6 +108,13 @@
 
 .menu__btn span:after
 	transform: translateY(5px)
+
+.menu-active .menu__btn span
+	height: 0
+.menu-active .menu__btn span:before
+	transform: rotate(-45deg)
+.menu-active .menu__btn span:after
+	transform: rotate(45deg)
 //===menu-btn===
 
 
@@ -126,12 +140,57 @@
 .list__item:last-child
 	border-right: 2px solid #3c3c3c
 
+#nav-search-wrap
+	padding-left: 0
+	padding-right: 0
+
 .list__item:hover .list__link
 	color: #999
+.list__item:active .list__link
+	color: black
 
 .list__link
 	text-decoration: none
 	color: #fff
+	position: relative
+	z-index: 1
+
+//===list seacrh===
+.header-search-wrap
+	position: relative
+
+.header-search-btn
+	z-index: 3
+	padding: 10px 13px
+	border-radius: 50%
+.header-search-input
+	position: absolute
+	z-index: 2
+	top: 50%
+	transform: translateY(-50%)
+	right: -1px
+	width: 0
+	height: calc(100% + 2px)
+	border-radius: 50px
+	border: 1px solid #000
+	outline: none
+	padding: rem(5px) rem(10px)
+	font-family: 'montserrat'
+	transition: .3s
+	opacity: 0
+
+#nav-search-wrap .header-search-btn
+	padding: 13px 14px
+#nav-search-wrap .header-search-input
+	height: 45px
+
+.search-input-active .header-search-btn
+	color: $accent_color
+	box-shadow: 0 0 4px 0 #000
+.search-input-active .header-search-input
+	width: rem(200px)
+	opacity: 1
+//===list seacrh===
 //===list===
 
 
@@ -197,6 +256,9 @@
 	background: #999
 .slider .slick-dots .slick-active
 	background: #999
+
+.slick-vertical .slick-slide
+	border: 0
 //===slider===
 
 

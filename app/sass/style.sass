@@ -3,11 +3,13 @@
 @import "mixin"
 @import "vars"
 @import "fonts"
-@import "media"
 
 @import "./components/header"
 @import "./components/posts"
+@import "./components/detail-posts"
+
 @import "./components/aside"
+@import "./components/footer"
 
 // ===default settings===
 html, body
@@ -17,6 +19,7 @@ html, body
 	height: 100%
 	color: $accent_color
 	font-family: $default_font
+html
 	font-size: 16px
 
 ul, li
@@ -102,3 +105,6 @@ section
 	letter-spacing: 1px
 	text-transform: uppercase
 // ===general style===
+
+
+@import "media"
