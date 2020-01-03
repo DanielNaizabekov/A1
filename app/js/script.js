@@ -96,4 +96,61 @@ $(function() {
 	$('.aside-slider .slick-next').html('&rarr;');
 	$('.aside-slider .slick-prev').html('&larr;');
 	// ===aside slider===
+
+
+
+	// ===recomended posts slider===
+	$('.recomended-posts-list').slick({
+		infinite: false,
+		slidesToShow: 3,
+		slidesToScroll: 3,
+		responsive: [
+		{
+			breakpoint: 600,
+			settings: {
+				slidesToShow: 2,
+				slidesToScroll: 2,
+			}
+		},
+		{
+			breakpoint: 375,
+			settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1,
+			}
+		}
+		]
+	});
+
+	$('.recomended-posts-list .slick-next').html('&rarr;');
+	$('.recomended-posts-list .slick-prev').html('&larr;');
+
+
+	//===sider's width resize===
+	let postListWidth = $('.post-list').width();
+	$('.recomended-posts').css('width', +postListWidth + 'px');
+	//===sider's width resize===
+	// ===recomended posts slider===
+
+
+
+	//===window resize listener===
+	var addEvent = function(object, type, callback) {
+		if (object == null || typeof(object) == 'undefined') return;
+		if (object.addEventListener) {
+			object.addEventListener(type, callback, false);
+		} else if (object.attachEvent) {
+			object.attachEvent("on" + type, callback);
+		} else {
+			object["on"+type] = callback;
+		}
+	};
+
+	addEvent(window, "resize", function(event) {
+		let postListWidth = $('.post-list').width();
+		$('.recomended-posts').css('width', +postListWidth + 'px');
+		console.log('1');
+	});
+	//===window resize listener===
+
 });

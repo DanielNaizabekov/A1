@@ -15,6 +15,11 @@
 	.post-item-info
 		padding-bottom: rem(75px)
 
+
++media(1200px)
+	.network-text-wrapper a
+		font-size: rem(12px)
+
 +media(1135px)
 	//===header subscribe===
 	.subscribe
@@ -137,6 +142,9 @@
 
 	.footer-desc span
 		display: block
+
+	.person-networks-list
+		grid-gap: rem(15px)
 		
 
 +media(600px)
@@ -164,6 +172,15 @@
 		font-size: rem(13px)
 		line-height: 20px
 
+	.person-networks-list
+		grid-template-columns: 1fr 1fr
+
+	.recomended-posts-list
+		margin-left: rem(-15px)
+
+	.recomended-posts-item
+		margin-left: rem(15px)
+
 
 +media(500px)
 	.posts-secondary-text
@@ -182,6 +199,25 @@
 	.comment-like .posts-secondary-text:last-child
 		margin: 0
 
+	.detail-post-buttons .detail-post-btn
+		padding: rem(25px) 0
+
+
++media(420px)
+	.person-img-wrap
+		display: none
+	.person-name-wrap
+		margin-left: rem(28px)
+
+	.detail-post-btn:last-child a
+		padding: 0
+	.detail-post-btn:first-child a
+		padding: 0
+
+	.detail-post-btn a:first-child:after
+		content: ''
+	.detail-post-btn a:last-child:after
+		content: ''
 
 +media(375px)
 	.slider-item
@@ -189,3 +225,16 @@
 
 	.footer-list
 		grid-template-columns: 1fr
+
+	.recomended-posts-list .slick-prev,
+	.recomended-posts-list .slick-next
+		padding: 3px 5px
+		font-size: 14px
+		top: -49px
+	.recomended-posts-list .slick-prev
+		right: 28px
+
++media(345px)
+	.recomended-posts
+		padding-right: 5px
+		padding-left: 5px
