@@ -67,3 +67,69 @@
 	content: '\2192'
 	right: 0
 //===detail-post-buttons===
+
+
+
+//===person info===
+.light-color
+	background: #f9f9fb
+	border: 0
+
+.person
+	display: flex
+	justify-content: space-between
+	background: #fff
+	border: 1px solid #f5f5f7
+
+.person-img-wrap
+	width: 25%
+	margin-right: rem(28px)
+.person-img
+	position: relative
+	padding-bottom: 60%
+	padding-top: 30px
+	height: 0
+	overflow: hidden
+.person-img img
+	position: absolute
+	top: 0
+	left: 0
+	height: 100%
+	object-fit: cover
+	width: 100%
+
+.person-name-wrap
+	flex: 1
+	display: flex
+	flex-direction: column
+	justify-content: center
+	margin-right: rem(28px)
+
+.person-name
+	display: flex
+	justify-content: space-between
+	padding-bottom: rem(15px)
+	margin-bottom: rem(15px)
+	border-bottom: 1px solid #eaeaeb
+.person-name a:first-child
+	+font('montserrat', rem(16px), $accent_color, 700)
+	text-transform: uppercase
+	text-decoration: none
+.person-name a:last-child
+	+font($default_font, rem(13px), $accent_color)
+	text-transform: uppercase
+	text-decoration: none
+
+.person-networks
+	margin-top: rem(20px)
+
+.person-networks-item i
+	width: rem(48px)
+	height: rem(48px)
+	background: $accent_color
+	text-align: center
+	display: block
+	color: #fff
+	line-height: rem(48px)
+	font-size: rem(18px)
+//===person info===
