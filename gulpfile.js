@@ -33,7 +33,13 @@ gulp.task('script', function() {
 });
 
 gulp.task('js', function() {
-	return gulp.src(['node_modules/jquery/dist/jquery.js', 'node_modules/slick-carousel/slick/slick.min.js'])
+	return gulp.src(
+		[
+		'node_modules/jquery/dist/jquery.js',
+		'node_modules/slick-carousel/slick/slick.min.js',
+		'node_modules/sweetalert2/dist/sweetalert2.min.js'
+		]
+		)
 	.pipe(concat('bundle.min.js'))
 	.pipe(uglify())
 	.pipe(gulp.dest('app/js/'))

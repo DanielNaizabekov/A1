@@ -18,7 +18,6 @@
 	top: 0
 	left: 0
 	width: 320px
-	// min-width: 320px
 	background: $accent_color
 	padding: rem(20px)
 	transition: .3s
@@ -28,10 +27,8 @@
 
 .menu-list
 	width: 100%
-	// min-height: 80vh
 	display: flex
 	flex-direction: column
-	// justify-content: space-between
 .menu-list .menu-item
 	margin-bottom: rem(20px)
 .menu-list .menu-item:last-child
@@ -118,6 +115,7 @@
 //===menu-btn===
 
 
+
 //===header-logo===
 .header-logo
 	position: absolute
@@ -125,6 +123,38 @@
 	top: 50%
 	transform: translate(-50%, -50%)
 	cursor: pointer
+
+	display: flex
+	align-items: flex-end
+	+font($default_font, rem(22px), #fff, 600)
+	text-transform: uppercase
+	text-decoration: none
+	letter-spacing: 4px
+
+.letter-d
+	padding-right: 15px
+	margin-right: 6px
+	position: relative
+.letter-d span,
+.letter-d span:after,
+.letter-d span:before
+	content: ''
+	position: absolute
+	top: calc(50% - 2px)
+	right: 0
+	width: 13px
+	height: 2px
+	background: #fff
+	border-radius: 2px
+.letter-d span:before
+	transform: translateY(-6px) scaleX(1.2)
+	transform-origin: left center
+.letter-d span:after
+	transform: translateY(8px) scaleX(1.2)
+	transform-origin: left center
+.letter-d,
+.header-logo span:nth-child(2)
+	font-size: rem(26px)
 //===header-logo===
 
 
@@ -199,7 +229,7 @@
 .slider-item
 	position: relative
 	padding: rem(215px) rem(100px)
-	background: url('../../img/main.jpg') center top no-repeat / cover
+	background: url('../img/main.jpg') center top no-repeat / cover
 	outline: none
 
 .slider__subtitle

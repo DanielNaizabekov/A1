@@ -75,12 +75,37 @@ $(function() {
 
 
 
+	//===header form===
+	$('.subscribe__form').on('submit', function(event) {
+		event.preventDefault();
+		let name = $(this).find('input[name="name"]').val();
+		Swal.fire({
+			title: 'Your subscription is successful!',
+			text: `Your name is: ${name}`,
+			icon: 'success',
+			confirmButtonText: 'ok',
+			showClass: {
+				popup: 'animated zoomIn faster'
+			},
+			hideClass: {
+				popup: 'animated zoomOut faster'
+			},
+			customClass: {
+				confirmButton: 'header-form-modal-btn',
+				title: 'header-form-modal-title'
+			}
+		})
+	});
+	//===header form===
+
+
+
 	//===categories===
 	$('.categories-title, .menu-categories').on('click', function(event) {
 		event.preventDefault();
 		$(this).toggleClass('categories-title-active');
 		$(this).parent().find('.categories-list').slideToggle(200);
-	})
+	});
 	//===categories===
 
 
@@ -149,7 +174,6 @@ $(function() {
 	addEvent(window, "resize", function(event) {
 		let postListWidth = $('.post-list').width();
 		$('.recomended-posts').css('width', +postListWidth + 'px');
-		console.log('1');
 	});
 	//===window resize listener===
 

@@ -1,5 +1,7 @@
 @import "../../node_modules/normalize.css/normalize"
 @import "../../node_modules/slick-carousel/slick/slick.css"
+@import "../../node_modules/sweetalert2/dist/sweetalert2.min.css"
+@import "../../node_modules/animate.css/animate.min.css"
 @import "mixin"
 @import "vars"
 @import "fonts"
@@ -113,9 +115,33 @@ section
 
 
 
-//===about page sass===
+//===modal window===
+.header-form-modal-btn
+	background: $accent_color !important
+	border-radius: 0 !important
+	box-shadow: none !important
+	+font($default_font, rem(14px), #fff, 500)
+	letter-spacing: 1px
+	text-transform: uppercase
+	padding: rem(12px) rem(48px) !important
+.header-form-modal-btn:hover
+	opacity: 0.8
 
-//===about page sass===
+.header-form-modal-title
+	font-family: montserrat,sans-serif
+	font-size: 1.25rem
+	color: #212121
+	font-weight: 700
+	line-height: 1.5625rem
+	letter-spacing: 1px
+
+.swal2-icon.swal2-success [class^=swal2-success-line]
+	background: black !important
+.swal2-icon.swal2-success .swal2-success-ring
+	border-color: #02020280
+.swal2-icon.swal2-success
+	border-color: #0a0a0a
+//===modal window===
 
 
 @import "media"
