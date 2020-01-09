@@ -210,21 +210,15 @@ $(function() {
 
 
 	//===star animation===
-	let toggle = false;
+	let clicked = false;
 
-	let stars = $('.icon-star');
-	let icon = $('.icon-icon');
-
-	for(let i = 0; i < stars.length; i++) {
+	for(let i = 0; i < $('.icon-star').length; i++) {
 		$('.icon-star:eq('+ i +')').attr('data-id', i);
 	};
 
-	console.log($('.icon-star').css('color'));
-
 	$('.icon-star').hover(function() {
 		let id = $(this).attr('data-id');
-		console.log($(this).css('color'));
-		if(toggle === true) {
+		if(clicked === true) {
 			return null;
 		} else{
 			for(let i = 0; i <= id; i++) {
@@ -233,7 +227,7 @@ $(function() {
 		}
 	},
 	function() {
-		if(toggle === true) {
+		if(clicked === true) {
 			return null;
 		} else{
 			$('.icon-star').css('color', '#999')
@@ -246,7 +240,7 @@ $(function() {
 	);
 
 	$('.rating').hover(function() {
-		if(toggle === true) {
+		if(clicked === true) {
 			return null;
 		} else{
 			$('.icon-star').css('color', '#999')
@@ -254,17 +248,80 @@ $(function() {
 	});
 
 	$('.icon-star').on('click', function() {
-		toggle = true;
-
+		clicked = true;
+		$('.icon-star').css('color', '#999')
 		let id = $(this).attr('data-id');
 
-		$('.icon-star').css('color', '#999')
-
 		for(let i = 0; i <= id; i++) {
-			$('.icon-star:eq('+ i +')').css({
-				cssText: 'color: #ff0010'
-			});
+			$('.icon-star:eq('+ i +')').css('color', '#ff0010');
 		};
 	});
 	//===star animation===
+
+
+
+	//===ajax===
+	$('.read-more-btn').on('click', function(event) {
+		event.preventDefault();
+		$('.overlay').toggleClass('overlay_active');
+
+		let userId = [
+			$(this).parent().find('a[href="about-page.html"]').attr('data-user-id'),
+			$(this).parent().find('a[href="about-page.html"]').attr('data-post-id')
+		];
+
+		fetch('https://decoblog-4df8b.firebaseio.com/userId.json', {
+			method: 'POST',
+			body: JSON.stringify(userId),
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		})
+		.then(response => response.json())
+		.then(response => {
+			let indexOf =  window.location.href.indexOf('index.html');
+			let splited = window.location.href.split('')
+			splited.splice(indexOf, 10, 'detail-page.html')
+			let joined = splited.join('');
+			window.location.href = joined;
+		})
+	});
+
+	if(window.location.href.includes('detail')) {
+		fetch(`https://decoblog-4df8b.firebaseio.com/userId.json`)
+		.then(response => response.json())
+		.then(response => {
+			return Object.values(response);
+		})
+		.then(response => {
+			let userId = response[response.length - 1];
+			return fetch(`https://decoblog-4df8b.firebaseio.com/${userId[0]}/${userId[1]}.json`)
+		})
+		.then(response => response.json())
+		.then(response => writeData(response))
+	};
+
+	function writeData (response) {
+		$('#posts-category').html(response.category);
+		$('#posts-title').html(response.title);
+		$('#posts-name').html(response.name);
+		$('#posts-date').html(response.date);
+		$('#posts-icon').addClass(`icon-${response.icon}`)
+
+		if(response.img === '#') {
+			$('.icon-pinterest').css('display', 'none');
+			$('#posts-img').parent().css('display', 'none');
+		} else{
+			$('#posts-img').attr('src', response.img);
+		};
+	};
+	//===ajax===
+
+
+
+	//===header slider pretty===
+	setTimeout(() => {
+		$('.slider-item').css('display', 'block');
+	}, 10);
+	//===header slider pretty===
 });
