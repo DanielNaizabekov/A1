@@ -324,4 +324,44 @@ $(function() {
 		$('.slider-item').css('display', 'block');
 	}, 10);
 	//===header slider pretty===
+
+
+
+	//===menu__btn-position===
+	let windowWidth = document.documentElement.clientWidth
+
+	if(windowWidth > 1505) {
+		let navOffset = document.querySelector('.nav').offsetLeft;
+		document.querySelector('.menu__btn').style.left = navOffset + 320 + 'px'
+
+		let menToggle = false;
+
+		$('.menu__btn').on('click', function() {
+			if(menToggle === false) {
+				menToggle = true;
+				document.querySelector('.menu__btn').style.left = 255 +'px'
+			} else{
+				menToggle = false;
+				document.querySelector('.menu__btn').style.left = navOffset + 320 + 'px'
+			}
+		});
+	}
+
+	if(windowWidth > 2150) {
+		let navOffset = document.querySelector('.nav').offsetLeft;
+		document.querySelector('.menu__btn').style.left = navOffset + 320 + 'px'
+
+		let menToggle = false;
+
+		$('.menu__btn').on('click', function() {
+			if(menToggle === false) {
+				menToggle = true;
+				document.querySelector('.menu__btn').style.left = navOffset +'px'
+			} else{
+				menToggle = false;
+				document.querySelector('.menu__btn').style.left = navOffset + 320 + 'px'
+			}
+		});
+	}
+	//===menu__btn-position===
 });
