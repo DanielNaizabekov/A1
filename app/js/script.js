@@ -328,40 +328,46 @@ $(function() {
 
 
 	//===menu__btn-position===
-	let windowWidth = document.documentElement.clientWidth
-
-	if(windowWidth > 1505) {
+	function setPosition() {
+		let windowWidth = document.documentElement.clientWidth;
 		let navOffset = document.querySelector('.nav').offsetLeft;
-		document.querySelector('.menu__btn').style.left = navOffset + 320 + 'px'
+		let menuBtn = document.querySelector('.menu__btn');
+		let menuWidth = menuBtn.parentElement.offsetWidth;
+		let menuOpen = false;
 
-		let menToggle = false;
+		if(windowWidth > 1505 && windowWidth < 2150) {
+			menuBtn.style.left = navOffset + menuWidth + 'px';
 
-		$('.menu__btn').on('click', function() {
-			if(menToggle === false) {
-				menToggle = true;
-				document.querySelector('.menu__btn').style.left = 255 +'px'
-			} else{
-				menToggle = false;
-				document.querySelector('.menu__btn').style.left = navOffset + 320 + 'px'
-			}
-		});
-	}
+			menuBtn.onclick = () => {
+				if(menuOpen === false) {
+					menuOpen = true;
+					menuBtn.style.left = menuWidth - menuBtn.offsetWidth + 'px';
+				} else{
+					menuOpen = false;
+					menuBtn.style.left = navOffset + menuWidth + 'px';
+				};
+			};
+		};
 
-	if(windowWidth > 2150) {
-		let navOffset = document.querySelector('.nav').offsetLeft;
-		document.querySelector('.menu__btn').style.left = navOffset + 320 + 'px'
+		if(windowWidth > 2150) {
+			menuBtn.style.left = navOffset + menuWidth + 'px';
 
-		let menToggle = false;
+			menuBtn.onclick = () => {
+				if(menuOpen === false) {
+					menuOpen = true;
+					menuBtn.style.left = navOffset + 'px';
+				} else{
+					menuOpen = false;
+					menuBtn.style.left = navOffset + menuWidth + 'px';
+				};
+			};
+		};
+	};
+	setPosition();
 
-		$('.menu__btn').on('click', function() {
-			if(menToggle === false) {
-				menToggle = true;
-				document.querySelector('.menu__btn').style.left = navOffset +'px'
-			} else{
-				menToggle = false;
-				document.querySelector('.menu__btn').style.left = navOffset + 320 + 'px'
-			}
-		});
-	}
+	addEvent(window, "resize", function() {
+		windowWidth = document.documentElement.clientWidth;
+		setPosition();
+	});
 	//===menu__btn-position===
 });
