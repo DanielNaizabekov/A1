@@ -152,30 +152,23 @@ $(function() {
 
 
 	//===sider's width resize===
-	let postListWidth = $('.post-list').width();
-	$('.recomended-posts').css('width', +postListWidth + 'px');
+	function postsSliderResize () {
+		let postList = document.querySelector('.post-list');
+		let recomendedPosts = postList.nextElementSibling;
+
+		if(recomendedPosts) {
+			recomendedPosts.style.width = 300 + 'px';
+			let postListWidth = postList.offsetWidth;
+			recomendedPosts.style.width = +postListWidth + 'px';
+		};
+	};
+	postsSliderResize();
+
+	window.addEventListener('resize', () => {
+		postsSliderResize();
+	});
 	//===sider's width resize===
 	// ===recomended posts slider===
-
-
-
-	//===window resize listener===
-	var addEvent = function(object, type, callback) {
-		if (object == null || typeof(object) == 'undefined') return;
-		if (object.addEventListener) {
-			object.addEventListener(type, callback, false);
-		} else if (object.attachEvent) {
-			object.attachEvent("on" + type, callback);
-		} else {
-			object["on"+type] = callback;
-		}
-	};
-
-	addEvent(window, "resize", function(event) {
-		let postListWidth = $('.post-list').width();
-		$('.recomended-posts').css('width', +postListWidth + 'px');
-	});
-	//===window resize listener===
 
 
 
@@ -262,44 +255,24 @@ $(function() {
 
 	//===ajax===
 	$('.read-more-btn').on('click', function(event) {
-		event.preventDefault();
-		$('.overlay').toggleClass('overlay_active');
-
 		let userId = [
 			$(this).parent().find('a[href="about-page.html"]').attr('data-user-id'),
 			$(this).parent().find('a[href="about-page.html"]').attr('data-post-id')
 		];
 
-		fetch('https://decoblog-4df8b.firebaseio.com/userId.json', {
-			method: 'POST',
-			body: JSON.stringify(userId),
-			headers: {
-				'Content-Type': 'application/json'
-			}
-		})
-		.then(response => response.json())
-		.then(response => {
-			let indexOf =  window.location.href.indexOf('index.html');
-			let splited = window.location.href.split('')
-			splited.splice(indexOf, 10, 'detail-page.html')
-			let joined = splited.join('');
-			window.location.href = joined;
-		})
+		sessionStorage.setItem('userId', userId);
 	});
 
-	if(window.location.href.includes('detail')) {
-		fetch(`https://decoblog-4df8b.firebaseio.com/userId.json`)
-		.then(response => response.json())
-		.then(response => {
-			return Object.values(response);
-		})
-		.then(response => {
-			let userId = response[response.length - 1];
-			return fetch(`https://decoblog-4df8b.firebaseio.com/${userId[0]}/${userId[1]}.json`)
-		})
+
+	let userId = sessionStorage.getItem('userId');
+	if(userId) {
+		userId = userId.split(',');
+
+		fetch(`https://decoblog-4df8b.firebaseio.com/${userId[0]}/${userId[1]}.json`)
 		.then(response => response.json())
 		.then(response => writeData(response))
 	};
+
 
 	function writeData (response) {
 		$('#posts-category').html(response.category);
@@ -314,6 +287,8 @@ $(function() {
 		} else{
 			$('#posts-img').attr('src', response.img);
 		};
+
+		$('.overlay').toggleClass('overlay_active');
 	};
 	//===ajax===
 
@@ -322,6 +297,7 @@ $(function() {
 	//===header slider pretty===
 	setTimeout(() => {
 		$('.slider-item').css('display', 'block');
+		$('.menu').css('display', 'block');
 	}, 10);
 	//===header slider pretty===
 
@@ -365,7 +341,7 @@ $(function() {
 	};
 	setPosition();
 
-	addEvent(window, "resize", function() {
+	window.addEventListener('resize', () => {
 		windowWidth = document.documentElement.clientWidth;
 		setPosition();
 	});
