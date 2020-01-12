@@ -153,8 +153,10 @@ $(function() {
 
 	//===sider's width resize===
 	function postsSliderResize () {
+		let recomendedPosts;
+
 		let postList = document.querySelector('.post-list');
-		let recomendedPosts = postList.nextElementSibling;
+		if (postList) {recomendedPosts = postList.nextElementSibling;}
 
 		if(recomendedPosts) {
 			recomendedPosts.style.width = 300 + 'px';
@@ -253,7 +255,7 @@ $(function() {
 
 
 
-	//===ajax===
+	//===user info===
 	$('.read-more-btn').on('click', function(event) {
 		let userId = [
 			$(this).parent().find('a[href="about-page.html"]').attr('data-user-id'),
@@ -290,7 +292,7 @@ $(function() {
 
 		$('.overlay').toggleClass('overlay_active');
 	};
-	//===ajax===
+	//===user info===
 
 
 
