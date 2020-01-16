@@ -68,9 +68,16 @@ $(function() {
 		]
 	});
 
-	$('.slick-next').html('&darr;');
-	$('.slick-prev').html('&uarr;');
-	$('.slick-dots li').html('');
+	function clearSliderBtns() {
+		$('.slick-next').html('&darr;');
+		$('.slick-prev').html('&uarr;');
+		$('.slick-dots li').html('');
+	};
+	clearSliderBtns()
+
+	window.addEventListener('resize', () => {
+		clearSliderBtns()
+	});
 	//===header slider===
 
 
