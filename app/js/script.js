@@ -355,4 +355,25 @@ $(function() {
 		setPosition();
 	});
 	//===menu__btn-position===
+
+
+
+	//===masonry grids===
+	let elem = document.querySelector('.grid');
+	let masonry;
+	if(elem) {
+		masonry = new Masonry( elem, {
+			itemSelector: '.grid-item',
+			columnWidth: '.grid-sizer',
+			percentPosition: true
+		});
+	};
+
+	window.addEventListener('resize', () => {
+		windowWidth = document.documentElement.clientWidth;
+		if(windowWidth <= 650) {
+			masonry = null;
+		}
+	});
+	//===masonry grids===
 });

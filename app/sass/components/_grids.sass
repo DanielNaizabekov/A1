@@ -1,0 +1,177 @@
+//===masonry grids===
+.grid
+	width: calc(100% + 16px)
+	margin-left: -8px
+
+
+/* clearfix */
+.grid:after
+	content: ''
+	display: block
+	clear: both
+
+
+/* ---- grid-item ---- */
+
+.grid-sizer,
+.grid-item
+	width: 25%
+
+
+.grid-item
+	float: left
+	border: 8px solid #f9f9fb
+	border-bottom: 24px solid #f9f9fb
+	padding-top: 0
+	background: #fff
+
+
+@media screen and (max-width: 1275px)
+	.grid-sizer,
+	.grid-item
+		width: 33.33%
+
+@media screen and (max-width: 910px)
+	.grid-sizer,
+	.grid-item
+		width: 50%
+
+@media screen and (max-width: 650px)
+	.grid-sizer,
+	.grid-item
+		width: 100%
+		position: static !important
+		max-width: 400px
+		margin-left: 50%
+		transform: translateX(-50%)
+//===masonry grids===
+
+
+//grids section's default===
+.grid__title
+	+font('montserrat', rem(20px), $accent_color, 700)
+	text-transform: uppercase
+	letter-spacing: 1px
+	text-align: center
+
+.grid__text
+	+font($default_font, rem(15px), $second_color, 300)
+	letter-spacing: 1px
+	line-height: 20px
+	margin-bottom: rem(25px)
+	text-align: center
+
+.grid__secondary-title
+	+font($default_font, rem(14px), $thirth_color, 400)
+	text-transform: uppercase
+	letter-spacing: 1px
+
+.grid__btn
+	+font($default_font, rem(14px), $accent_color, 500)
+	text-transform: uppercase
+	text-decoration: none
+	letter-spacing: 1px
+	padding: rem(10px) rem(14px)
+	border-left: 1px solid #d7d7d7
+	border-right: 1px solid #d7d7d7
+	margin-bottom: rem(25px)
+
+.grid-item_dark
+	background: #212429
+	text-align: center
+
+.grid-item_dark .grid__text
+	color: #fff
+	margin-top: rem(45px)
+
+.grid-item_dark .grid__secondary-title
+	margin-bottom: rem(14px)
+
+.grid-item__link
+	margin-top: rem(40px) !important
+	margin-bottom: rem(35px) !important
+	text-decoration: underline
+	color: #fff
+	line-height: 23px
+
+.grid-item_dark .grid-item__icon
+	color: #212429
+	background: #fff
+	box-shadow: 0px 1px 3px 0px rgba(213, 213, 213, 0.75)
+
+.grid-item-bg
+	background: url('../img/grid-bg.jpg')
+//grids section's default===
+
+
+//==grid style===
+.grid-item__inner
+	width: 100%
+	height: 100%
+	padding: 0 rem(20px) rem(15px) rem(20px)
+	position: relative
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: flex-start
+	border: 1px solid #f1f1f3
+
+.grid-item__icon
+	position: absolute
+	top: 0
+	left: 50%
+	transform: translate(-50%, -50%)
+	width: 37px
+	height: 35px
+	background: $accent_color
+	color: #fff
+	text-align: center
+	line-height: 35px
+
+.grid-item__inner span:nth-child(2)
+	margin-top: rem(48px)
+	margin-bottom: rem(11px)
+.grid-item__inner span:nth-child(4)
+	margin-top: rem(9px)
+	margin-bottom: rem(22px)
+
+.grid-item__footer
+	width: 100%
+	padding-top: rem(15px)
+	border-top: 1px solid #f7f7f7
+.networks__list
+	width: 100px
+.grid-item__footer,
+.networks__list
+	display: flex
+	justify-content: space-between
+
+.grid-item__footer span
+	padding-left: rem(28px)
+	position: relative
+.grid-item__footer span:before
+	content: '\f0e6'
+	font-family: 'icomoon'
+	position: absolute
+	top: 0
+	left: 0
+	color: $accent_color
+	font-size: 15px
+	line-height: 14px
+
+.networks__item a
+	color: $accent_color
+	text-decoration: none
+
+
+.grid-item__img-wrap
+	width: 100%
+	height: 255px
+	background: #f4f4f4
+
+.circle
+	width: 125px
+	height: 125px
+	background: #999
+	border-radius: 50%
+//==grid style===

@@ -37,7 +37,8 @@ gulp.task('js', function() {
 		[
 		'node_modules/jquery/dist/jquery.js',
 		'node_modules/slick-carousel/slick/slick.min.js',
-		'node_modules/sweetalert2/dist/sweetalert2.min.js'
+		'node_modules/sweetalert2/dist/sweetalert2.min.js',
+		'node_modules/masonry-layout/dist/masonry.pkgd.min.js'
 		]
 		)
 	.pipe(concat('bundle.min.js'))
